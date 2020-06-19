@@ -1,57 +1,24 @@
----
-layout: default
----
+I"›
+<h2 id="introduction">Introduction</h2>
 
-## Introduction
+<p>There should be whitespace between paragraphs.</p>
 
+<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
 
+<h2 id="install">Install</h2>
 
+<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-## Install
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Cloud Server
-
-
-## System startup process
-
-## System directory structure
-
-## Solution for forgotten password
-
-## Telnet
-
-## Basic file attributes
-
-## File directory management
-
-## User and user group management
-
-## Disk management
-
-## Vi/Vim
-
-## Yum instruction
-
-## Summary of common instructions
-
-## Thoughts
-
-
-<div style='display: none'>
+<h2 id="cloud-server">Cloud Server</h2>
+<div style="display: none">
 
 _yay_
 
    Text can be **bold**, _italic_, or ~~strikethrough~~.
    
-   > This is a blockquote following a header.
-   >
-   > When something is important enough, you do it even if the odds are not in your favor.
+   &gt; This is a blockquote following a header.
+   &gt;
+   &gt; When something is important enough, you do it even if the odds are not in your favor.
 
 ### Header 3
 
@@ -154,12 +121,11 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
-</div>
 
 
 [back](./)
 
 
+</div>
 
-
-
+:ET

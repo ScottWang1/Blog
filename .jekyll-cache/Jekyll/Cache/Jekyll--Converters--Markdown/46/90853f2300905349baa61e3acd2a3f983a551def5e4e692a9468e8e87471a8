@@ -1,57 +1,42 @@
----
-layout: default
----
+I" <h2 id="introduction">Introduction</h2>
 
-## Introduction
+<p>There should be whitespace between paragraphs.</p>
 
+<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
 
+<h2 id="install">Install</h2>
 
+<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
 
-There should be whitespace between paragraphs.
+<h2 id="cloud-server">Cloud Server</h2>
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+<h2 id="system-startup-process">System startup process</h2>
 
-## Install
+<h2 id="system-directory-structure">System directory structure</h2>
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+<h2 id="solution-for-forgotten-password">Solution for forgotten password</h2>
 
-## Cloud Server
+<h2 id="telnet">Telnet</h2>
 
+<h2 id="basic-file-attributes">Basic file attributes</h2>
 
-## System startup process
+<h2 id="file-directory-management">File directory management</h2>
 
-## System directory structure
+<h2 id="user-and-user-group-management">User and user group management</h2>
 
-## Solution for forgotten password
+<h2 id="disk-management">Disk management</h2>
 
-## Telnet
+<h2 id="vivim">Vi/Vim</h2>
 
-## Basic file attributes
-
-## File directory management
-
-## User and user group management
-
-## Disk management
-
-## Vi/Vim
-
-## Yum instruction
-
-## Summary of common instructions
-
-## Thoughts
-
-
-<div style='display: none'>
+<div style="display: none">
 
 _yay_
 
    Text can be **bold**, _italic_, or ~~strikethrough~~.
    
-   > This is a blockquote following a header.
-   >
-   > When something is important enough, you do it even if the odds are not in your favor.
+   &gt; This is a blockquote following a header.
+   &gt;
+   &gt; When something is important enough, you do it even if the odds are not in your favor.
 
 ### Header 3
 
@@ -154,12 +139,11 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
-</div>
 
 
 [back](./)
 
 
+</div>
 
-
-
+:ET
