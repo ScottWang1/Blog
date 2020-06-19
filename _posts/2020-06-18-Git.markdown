@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Maven"
+date:   2020-06-18 12:46:52 +0800
+categories: k
+---
+
+
+
+
+Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。
+
+首先会创建pox.xml文件，其中包含了此项目的所有相关信息。
+
+可以用`mvn archetype:create`指令创建项目；
+
+用`mvn clean`来清理项目，其中分pre-clean、clean、post-clean三个阶段；
+
+用`mvn compile`编译；
+
+用`mvn test`运行测试；
+
+用`mvn site`产生文档；在site文件夹里点击index.html就可以了
+
+`mvn package`打包；
+
+用`mvn install`在本地封包。
+
+对于POM中的依赖，Maven会从 [Super POM 默认仓库][jekyll-docs2] 中下载，可用`mvn help:effective-pom`查看或更改你的默认配置。
+
+另外，因为墙的原因，访问国外的仓库可能会很慢，可通过修改maven根目录下的setting.xml文件把默认仓库切换成阿里云仓库
+
+用Maven构建自己的Java项目：
+
+终端指令：`mvn archetype:generate "-DgroupId=MavenTest" "-DartifactId=ScottWang" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"`
+
+测试自己构建的Java项目：
+
+终端指令：`mvn clean package`
+
+打包好的 jar 文件可以在 ScottWang\target 中获得
+
+然后输入终端指令：
+`cd target`
+`java MavenTest.App`
+
+使用项目模版：
+通过`mvn archetype:generate `指令来选择并创建项目模版， 可以用maven 简单的命令创建任何类型的项目；可以选择quickstart来快速创建。
+
+Maven中snapshot可以及时更新
+
+可以使用IntelliJ IDEA来运行Maven项目，只需要通过创建项目->导入现有项目并选择Maven和其根目录就可以了，创建完成以后可以直接在IntelliJ IDEA里用终端来编译运行。
+
+[jekyll-docs2]: http://repo1.maven.org/maven2
+
