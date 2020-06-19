@@ -1,0 +1,12 @@
+I"’<p>[^_^]:</p>
+
+<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
+
+<p>(<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>).</p>
+
+<p>[^_^]:
+    commentted-out contents
+    should be shift to right by four spaces (<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>).</p>
+
+<p><a href="./another-page.html">Link to another page</a>.</p>
+:ET

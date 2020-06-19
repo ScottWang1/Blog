@@ -1,6 +1,6 @@
-I"<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
+I"ç<h2 id="welcome-to-another-page">Welcome to another page</h2>
 
-<p><a href="./another-page.html">Link to another page</a>.</p>
+<p><em>yay</em></p>
 
 <p>There should be whitespace between paragraphs.</p>
 
@@ -161,4 +161,6 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
 </code></pre></div></div>
+
+<p><a href="./">back</a></p>
 :ET
