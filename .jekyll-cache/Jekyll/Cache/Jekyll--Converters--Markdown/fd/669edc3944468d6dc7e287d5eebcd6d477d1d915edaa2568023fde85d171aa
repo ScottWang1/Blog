@@ -1,0 +1,251 @@
+I"�%<h2 id="introduction">Introduction</h2>
+
+<p>The Linux kernel was originally written by Finn Linus Torvalds for personal hobbies while studying at the University of Helsinki.
+Linux is a set of Unix-like operating systems that are free to use and freely disseminate. It is a multi-user, multi-tasking, multi-threading and multi-CPU operating system based on POSIX and UNIX.
+Linux can run major UNIX tool software, applications and network protocols. It supports 32-bit and 64-bit hardware. Linux inherits Unix’s network-centric design philosophy, and is a stable multi-user network operating system..</p>
+
+<h2 id="install">Install</h2>
+
+<p>What I installed is the CentOS 8 in VMware Fusion in Mac. First you need to <a href="https://www.centos.org/download/">download the CentOS</a> and <a href="https://www.vmware.com/products/fusion/fusion-evaluation.html">download the VMware Fusion</a> .</p>
+
+<p>Run the VMware Fusion and select the DVD that you had downloaded and name it and Split space for it, the default is 20GB. And don’t forget setting the share folder which can let Linux visit your Mac’s folder by VMware tools.</p>
+
+<h2 id="system-startup">System startup</h2>
+
+<p>When Linux starts, we will see a lot of startup information.
+The startup process of the Linux system is not as complicated as everyone thinks.</p>
+
+<p>The process can be divided into 5 stages:
+The boot of the kernel;
+Run init;
+system initialization;
+Establish a terminal and
+The user logs into the system.</p>
+
+<p>Shutdown command：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shutdown –h now 
+</code></pre></div></div>
+<p>if you want to drawback, input:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># shutdown -c 
+</code></pre></div></div>
+
+<h2 id="system-directory-structure">System directory structure</h2>
+
+<p>Input:
+ <code class="language-plaintext highlighter-rouge">ls /</code>, you can see the list of system directory structure.</p>
+
+<p>Here are the explanations of those directories:</p>
+
+<p>/bin：As short of ‘binary’, which contains the most frequently used commands.</p>
+
+<p>/boot:
+Here are stored some core files used when starting Linux, including some connection files and image files.</p>
+
+<p>/dev:
+dev is the abbreviation of Device, and the external devices in Linux are stored in this directory. The way to access devices in Linux is the same as the way to access files.</p>
+
+<p>/etc:
+This directory is used to store all the configuration files and subdirectories needed for system management.</p>
+
+<p>/home:
+The user’s home directory, in Linux, each user has its own directory, generally the directory name is named after the user’s account.</p>
+
+<p>/lib:
+This directory stores the system’s most basic dynamic link shared library, its role is similar to the DLL file in Windows. Almost all applications need to use these shared libraries.</p>
+
+<p>/lost+found:
+This directory is generally empty. When the system is shut down illegally, some files are stored here.</p>
+
+<p>/media:
+The Linux system will automatically recognize some devices, such as U disk, CD-ROM, etc. After recognition, Linux will mount the recognized devices to this directory.</p>
+
+<p>/mnt:
+The system provides this directory to allow users to temporarily mount other file systems. We can mount the optical drive on /mnt/, and then enter the directory to view the contents of the optical drive.</p>
+
+<p>/opt:
+ This is the directory where additional software is installed for the host. For example, if you install an ORACLE database, you can put it in this directory. The default is empty.</p>
+
+<p>/proc:
+This directory is a virtual directory, which is a mapping of system memory. We can obtain system information by directly accessing this directory.
+The content of this directory is not in the hard disk but in the memory. We can also directly modify some of the files inside.</p>
+
+<p>/root:
+This directory is the system administrator’s home directory, also known as the super administrator.</p>
+
+<p>/sbin:
+s is the meaning of Super User. Here is stored the system management program used by the system administrator.</p>
+
+<p>/selinux:
+ This directory is unique to Redhat/CentOS. Selinux is a security mechanism similar to windows firewall, but this mechanism is more complicated. This directory stores selinux-related files.</p>
+
+<p>/srv:
+ This directory stores some data that needs to be extracted after the service is started.</p>
+
+<p>/sys:
+ This is a big change in the linux2.6 kernel. A new file system sysfs in the 2.6 kernel is installed in this directory.
+The sysfs file system integrates the following three types of file system information: the proc file system for process information, the devfs file system for devices, and the devpts file system for pseudo terminals.
+The file system is an intuitive reflection of the kernel device tree.
+When a kernel object is created, the corresponding files and directories are also created in the kernel object subsystem.</p>
+
+<p>/tmp:
+This directory is used to store some temporary files.</p>
+
+<p>/usr:
+ This is a very important directory. Many user applications and files are placed in this directory, similar to the program files directory under windows.</p>
+
+<p>/usr/bin:
+Applications used by system users.</p>
+
+<p>/usr/sbin:
+The more advanced management programs and system daemons used by super users.</p>
+
+<p>/usr/src:
+The kernel source code is placed in the default directory.</p>
+
+<p>/var:
+This directory stores things that are constantly expanding, and we are used to putting those frequently modified directories under this directory. Includes various log files.</p>
+
+<p>/run:
+It is a temporary file system that stores information since the system was started. When the system restarts, the files in this directory should be deleted or cleared. If you have a /var/run directory on your system, you should point it to run.</p>
+
+<p>In the Linux system, there are several directories that are more important. You need to be careful not to delete or change internal files by mistake.
+/etc: As mentioned above, this is the configuration file in the system. If you change a file in this directory, the system may not start.
+/bin, /sbin, /usr/bin, /usr/sbin: This is the default directory where the system executes files. For example, ls is in the /bin/ls directory.
+It is worth mentioning that /bin, /usr/bin are instructions for system users (all users except root), and /sbin, /usr/sbin are instructions for root.</p>
+
+<p>/var: This is a very important directory, there are many programs running on the system, then each program will have a corresponding log, and these logs are recorded in this directory, specifically in the /var/log directory, in addition The default placement of mail is also here.</p>
+
+<h2 id="solution-for-forgotten-password">Solution for forgotten password</h2>
+
+<h2 id="telnet">Telnet</h2>
+
+<h2 id="basic-file-attributes">Basic file attributes</h2>
+
+<h2 id="file-directory-management">File directory management</h2>
+
+<h2 id="user-and-user-group-management">User and user group management</h2>
+
+<h2 id="disk-management">Disk management</h2>
+
+<h2 id="vivim">Vi/Vim</h2>
+
+<h2 id="yum-instruction">Yum instruction</h2>
+
+<h2 id="summary-of-common-instructions">Summary of common instructions</h2>
+
+<h2 id="thoughts">Thoughts</h2>
+
+<div style="display: none">
+
+_yay_
+
+   Text can be **bold**, _italic_, or ~~strikethrough~~.
+   
+   &gt; This is a blockquote following a header.
+   &gt;
+   &gt; When something is important enough, you do it even if the odds are not in your favor.
+
+### Header 3
+
+```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require('./lang/' + l)
+  return true;
+}
+```
+
+```ruby
+# Ruby code with syntax highlighting
+GitHubPages::Dependencies.gems.each do |gem, version|
+  s.add_dependency(gem, "= #{version}")
+end
+```
+
+#### Header 4
+
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+
+##### Header 5
+
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
+
+###### Header 6
+
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+### There's a horizontal rule below this.
+
+* * *
+
+### Here is an unordered list:
+
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
+
+### And an ordered list:
+
+1.  Item one
+1.  Item two
+1.  Item three
+1.  Item four
+
+### And a nested list:
+
+- level 1 item
+  - level 2 item
+  - level 2 item
+    - level 3 item
+    - level 3 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+
+### Small image
+
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+
+### Large image
+
+![Branching](https://guides.github.com/activities/hello-world/branching.png)
+
+
+### Definition lists can be used with HTML syntax.
+
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+
+</div>
+
+<p><a href="./">back</a></p>
+
+:ET
