@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Maven | ScottWang的博客</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="Maven" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。" />
+<meta property="og:description" content="Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。" />
+<link rel="canonical" href="http://localhost:4000/k/2020/06/18/Git.html" />
+<meta property="og:url" content="http://localhost:4000/k/2020/06/18/Git.html" />
+<meta property="og:site_name" content="ScottWang的博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-18T12:46:52+08:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/k/2020/06/18/Git.html","headline":"Maven","dateModified":"2020-06-18T12:46:52+08:00","datePublished":"2020-06-18T12:46:52+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/k/2020/06/18/Git.html"},"description":"Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ScottWang的博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">ScottWang的博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Maven</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-06-18T12:46:52+08:00" itemprop="datePublished">Jun 18, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。</p>
+
+<p>首先会创建pox.xml文件，其中包含了此项目的所有相关信息。</p>
+
+<p>可以用<code class="language-plaintext highlighter-rouge">mvn archetype:create</code>指令创建项目；</p>
+
+<p>用<code class="language-plaintext highlighter-rouge">mvn clean</code>来清理项目，其中分pre-clean、clean、post-clean三个阶段；</p>
+
+<p>用<code class="language-plaintext highlighter-rouge">mvn compile</code>编译；</p>
+
+<p>用<code class="language-plaintext highlighter-rouge">mvn test</code>运行测试；</p>
+
+<p>用<code class="language-plaintext highlighter-rouge">mvn site</code>产生文档；在site文件夹里点击index.html就可以了</p>
+
+<p><code class="language-plaintext highlighter-rouge">mvn package</code>打包；</p>
+
+<p>用<code class="language-plaintext highlighter-rouge">mvn install</code>在本地封包。</p>
+
+<p>对于POM中的依赖，Maven会从 <a href="http://repo1.maven.org/maven2">Super POM 默认仓库</a> 中下载，可用<code class="language-plaintext highlighter-rouge">mvn help:effective-pom</code>查看或更改你的默认配置。</p>
+
+<p>另外，因为墙的原因，访问国外的仓库可能会很慢，可通过修改maven根目录下的setting.xml文件把默认仓库切换成阿里云仓库</p>
+
+<p>用Maven构建自己的Java项目：</p>
+
+<p>终端指令：<code class="language-plaintext highlighter-rouge">mvn archetype:generate "-DgroupId=MavenTest" "-DartifactId=ScottWang" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"</code></p>
+
+<p>测试自己构建的Java项目：</p>
+
+<p>终端指令：<code class="language-plaintext highlighter-rouge">mvn clean package</code></p>
+
+<p>打包好的 jar 文件可以在 ScottWang\target 中获得</p>
+
+<p>然后输入终端指令：
+<code class="language-plaintext highlighter-rouge">cd target</code>
+<code class="language-plaintext highlighter-rouge">java MavenTest.App</code></p>
+
+<p>使用项目模版：
+通过<code class="language-plaintext highlighter-rouge">mvn archetype:generate </code>指令来选择并创建项目模版， 可以用maven 简单的命令创建任何类型的项目；可以选择quickstart来快速创建。</p>
+
+<p>Maven中snapshot可以及时更新</p>
+
+<p>可以使用IntelliJ IDEA来运行Maven项目，只需要通过创建项目-&gt;导入现有项目并选择Maven和其根目录就可以了，创建完成以后可以直接在IntelliJ IDEA里用终端来编译运行。</p>
+
+
+  </div><a class="u-url" href="/k/2020/06/18/Git.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">ScottWang的博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">ScottWang的博客</li><li><a class="u-email" href="mailto:1377320694@qq.com">1377320694@qq.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/ScottWang1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ScottWang1</span></a></li><li><a href="https://www.twitter.com/ScottWang"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">ScottWang</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

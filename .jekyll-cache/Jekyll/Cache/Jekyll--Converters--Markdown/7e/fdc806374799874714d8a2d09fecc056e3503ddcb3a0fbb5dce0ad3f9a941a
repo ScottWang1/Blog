@@ -1,0 +1,2 @@
+I"j<p>Git可以使多人合作项目完成起来更高效,得益于它的分支管理，你可以在做这个项目的同时，创建另一个branch<code class="language-plaintext highlighter-rouge">git branch -b (branchname)</code>来开始另一个项目，然后回来继续做原来的项目<code class="language-plaintext highlighter-rouge">git checkout master</code>，不过在这之前需要将当前的任务提交<code class="language-plaintext highlighter-rouge">git commit -am "commit"</code>或者暂存<code class="language-plaintext highlighter-rouge">git stash</code>来保持一个干净的工作台</p>
+:ET

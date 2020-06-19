@@ -1,0 +1,10 @@
+I"�<p>Git可以使多人合作项目完成起来更高效,得益于它的分支管理，你可以在做这个项目的同时，创建另一个branch<code class="language-plaintext highlighter-rouge">git branch -b (branchname)</code>来开始另一个项目，然后回来继续做原来的项目<code class="language-plaintext highlighter-rouge">git checkout master</code>，不过在这之前需要将当前的任务提交<code class="language-plaintext highlighter-rouge">git commit -am "commit"</code>或者暂存<code class="language-plaintext highlighter-rouge">git stash</code>来保持一个干净的工作台</p>
+
+<p>可以在团队合作开发中，注册git用户，表明开发作者<code class="language-plaintext highlighter-rouge">git config --global user.name XXX</code> 和其邮箱<code class="language-plaintext highlighter-rouge">git config --global user.email XXX</code>，也可以查看用户信息<code class="language-plaintext highlighter-rouge">git config --list </code></p>
+
+<p>开始开发需要先从远程仓库(github)中克隆现有进度<code class="language-plaintext highlighter-rouge">git clone</code>，做好工作后也要再次将远程仓库的内容下载一次<code class="language-plaintext highlighter-rouge">git pull</code>，因为在这期间可能有人做出了更新，你可以选择合并<code class="language-plaintext highlighter-rouge">git merge</code>或者衍合<code class="language-plaintext highlighter-rouge">git rebase</code>来统一进度，然后打上标签<code class="language-plaintext highlighter-rouge">git tag</code>并提交<code class="language-plaintext highlighter-rouge">git commit</code>，最后推送<code class="language-plaintext highlighter-rouge">git push</code>。并不是每个人都有写权，有些需要公钥，这取决于各自团队的工作模式。</p>
+
+<p>可以查看哪些用户做了修改<code class="language-plaintext highlighter-rouge">git log</code>，以及改了什么<code class="language-plaintext highlighter-rouge">git diff</code>,如果后悔可以撤销<code class="language-plaintext highlighter-rouge">git reset</code></p>
+
+<p>Git 可以使用四种主要的协议来传输数据：本地传输，SSH 协议，Git 协议和 HTTP 协议。其中只有SSH协议同时支持读写操作</p>
+:ET

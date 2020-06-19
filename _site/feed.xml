@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-19T09:28:43+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ScottWang的博客</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Maven</title><link href="http://localhost:4000/k/2020/06/18/Git.html" rel="alternate" type="text/html" title="Maven" /><published>2020-06-18T12:46:52+08:00</published><updated>2020-06-18T12:46:52+08:00</updated><id>http://localhost:4000/k/2020/06/18/Git</id><content type="html" xml:base="http://localhost:4000/k/2020/06/18/Git.html">&lt;p&gt;Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。&lt;/p&gt;
+
+&lt;p&gt;首先会创建pox.xml文件，其中包含了此项目的所有相关信息。&lt;/p&gt;
+
+&lt;p&gt;可以用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn archetype:create&lt;/code&gt;指令创建项目；&lt;/p&gt;
+
+&lt;p&gt;用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn clean&lt;/code&gt;来清理项目，其中分pre-clean、clean、post-clean三个阶段；&lt;/p&gt;
+
+&lt;p&gt;用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn compile&lt;/code&gt;编译；&lt;/p&gt;
+
+&lt;p&gt;用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn test&lt;/code&gt;运行测试；&lt;/p&gt;
+
+&lt;p&gt;用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn site&lt;/code&gt;产生文档；在site文件夹里点击index.html就可以了&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn package&lt;/code&gt;打包；&lt;/p&gt;
+
+&lt;p&gt;用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn install&lt;/code&gt;在本地封包。&lt;/p&gt;
+
+&lt;p&gt;对于POM中的依赖，Maven会从 &lt;a href=&quot;http://repo1.maven.org/maven2&quot;&gt;Super POM 默认仓库&lt;/a&gt; 中下载，可用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn help:effective-pom&lt;/code&gt;查看或更改你的默认配置。&lt;/p&gt;
+
+&lt;p&gt;另外，因为墙的原因，访问国外的仓库可能会很慢，可通过修改maven根目录下的setting.xml文件把默认仓库切换成阿里云仓库&lt;/p&gt;
+
+&lt;p&gt;用Maven构建自己的Java项目：&lt;/p&gt;
+
+&lt;p&gt;终端指令：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn archetype:generate &quot;-DgroupId=MavenTest&quot; &quot;-DartifactId=ScottWang&quot; &quot;-DarchetypeArtifactId=maven-archetype-quickstart&quot; &quot;-DinteractiveMode=false&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;测试自己构建的Java项目：&lt;/p&gt;
+
+&lt;p&gt;终端指令：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn clean package&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;打包好的 jar 文件可以在 ScottWang\target 中获得&lt;/p&gt;
+
+&lt;p&gt;然后输入终端指令：
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd target&lt;/code&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java MavenTest.App&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;使用项目模版：
+通过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn archetype:generate &lt;/code&gt;指令来选择并创建项目模版， 可以用maven 简单的命令创建任何类型的项目；可以选择quickstart来快速创建。&lt;/p&gt;
+
+&lt;p&gt;Maven中snapshot可以及时更新&lt;/p&gt;
+
+&lt;p&gt;可以使用IntelliJ IDEA来运行Maven项目，只需要通过创建项目-&amp;gt;导入现有项目并选择Maven和其根目录就可以了，创建完成以后可以直接在IntelliJ IDEA里用终端来编译运行。&lt;/p&gt;</content><author><name></name></author><summary type="html">Maven可以帮助用来进行项目构建，并且有许多生命周期：验证；编译；测试；打包；检查；安装；部署。</summary></entry><entry><title type="html">Git</title><link href="http://localhost:4000/jekyll/update/2020/06/18/L.html" rel="alternate" type="text/html" title="Git" /><published>2020-06-18T12:46:52+08:00</published><updated>2020-06-18T12:46:52+08:00</updated><id>http://localhost:4000/jekyll/update/2020/06/18/L</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2020/06/18/L.html">&lt;p&gt;Git可以使多人合作项目完成起来更高效,得益于它的分支管理，你可以在做这个项目的同时，创建另一个branch&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -b (branchname)&lt;/code&gt;来开始另一个项目，然后回来继续做原来的项目&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout master&lt;/code&gt;，不过在这之前需要将当前的任务提交&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -am &quot;commit&quot;&lt;/code&gt;或者暂存&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git stash&lt;/code&gt;来保持一个干净的工作台&lt;/p&gt;
+
+&lt;p&gt;可以在团队合作开发中，注册git用户，表明开发作者&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global user.name XXX&lt;/code&gt; 和其邮箱&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global user.email XXX&lt;/code&gt;，也可以查看用户信息&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --list &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;开始开发需要先从远程仓库(github)中克隆现有进度&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone&lt;/code&gt;，做好工作后也要再次将远程仓库的内容下载一次&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt;，因为在这期间可能有人做出了更新，你可以选择合并&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge&lt;/code&gt;或者衍合&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git rebase&lt;/code&gt;来统一进度，然后打上标签&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt;并提交&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;，最后推送&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;。并不是每个人都有写权，有些需要公钥，这取决于各自团队的工作模式。&lt;/p&gt;
+
+&lt;p&gt;可以查看哪些用户做了修改&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt;，以及改了什么&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git diff&lt;/code&gt;,如果后悔可以撤销&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Git 可以使用四种主要的协议来传输数据：本地传输，SSH 协议，Git 协议和 HTTP 协议。其中只有SSH协议同时支持读写操作&lt;/p&gt;</content><author><name></name></author><summary type="html">Git可以使多人合作项目完成起来更高效,得益于它的分支管理，你可以在做这个项目的同时，创建另一个branchgit branch -b (branchname)来开始另一个项目，然后回来继续做原来的项目git checkout master，不过在这之前需要将当前的任务提交git commit -am &quot;commit&quot;或者暂存git stash来保持一个干净的工作台</summary></entry><entry><title type="html">Linux</title><link href="http://localhost:4000/jekyll/update/2020/06/18/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Linux" /><published>2020-06-18T12:46:52+08:00</published><updated>2020-06-18T12:46:52+08:00</updated><id>http://localhost:4000/jekyll/update/2020/06/18/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2020/06/18/welcome-to-jekyll.html">&lt;p&gt;Linux操作系统和MacOS都是类Unix系统，在终端指令上具有很高的相似性。&lt;/p&gt;
+
+&lt;p&gt;通过 &lt;a href=&quot;https://www.runoob.com/linux/linux-command-manual.html&quot;&gt;Linux指令&lt;/a&gt; 学习了对于文档，文件夹的创建、编辑操作。并且对Shell脚本的编写格式有了简单的了解。&lt;/p&gt;
+
+&lt;p&gt;通过虚拟机VMware Fusion安装CentOS 8 Linux并用yum install git完成环境搭建，并用VMware tools设置共享文档，以确保Mac中IDEA生成的项目可以通过虚拟机访问并通过git上传到远程仓库。&lt;/p&gt;</content><author><name></name></author><summary type="html">Linux操作系统和MacOS都是类Unix系统，在终端指令上具有很高的相似性。</summary></entry></feed>
