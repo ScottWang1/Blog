@@ -53,106 +53,101 @@ Input:
 you can see the list of system directory structure.
 
 Here are the explanations of those directories:
+    
+    /bin：As short of 'binary', which contains the most frequently used commands.
+    /boot: Here are stored some core files used when starting Linux, including some connection files and image files.
+    /dev: dev is the abbreviation of Device, and the external devices in Linux are stored in this directory. The way to access devices in Linux is the same as the way to access files.
+    /etc: This directory is used to store all the configuration files and subdirectories needed for system management.
+    /home: The user's home directory, in Linux, each user has its own directory, generally the directory name is named after the user's account.
+    /lib: This directory stores the system's most basic dynamic link shared library, its role is similar to the DLL file in Windows. Almost all applications need to use these shared libraries.
+    /opt: This is the directory where additional software is installed for the host. For example, if you install an ORACLE database, you can put it in this directory. The default is empty.
+    /root: This directory is the system administrator's home directory, also known as the super administrator.
+    /sbin: s is the meaning of Super User. Here is stored the system management program used by the system administrator.
+    /selinux: This directory is unique to Redhat/CentOS. Selinux is a security mechanism similar to windows firewall, but this mechanism is more complicated. This directory stores selinux-related files. 
+    /srv: This directory stores some data that needs to be extracted after the service is started. 
+    /tmp: This directory is used to store some temporary files.
+    /usr: This is a very important directory. Many user applications and files are placed in this directory, similar to the program files directory under windows. 
+    /usr/bin: Applications used by system users.
 
-/bin：As short of 'binary', which contains the most frequently used commands.
 
-/boot:
-Here are stored some core files used when starting Linux, including some connection files and image files.
 
-/dev:
-dev is the abbreviation of Device, and the external devices in Linux are stored in this directory. The way to access devices in Linux is the same as the way to access files.
-
-/etc:
-This directory is used to store all the configuration files and subdirectories needed for system management.
-
-/home:
-The user's home directory, in Linux, each user has its own directory, generally the directory name is named after the user's account.
-
-/lib:
-This directory stores the system's most basic dynamic link shared library, its role is similar to the DLL file in Windows. Almost all applications need to use these shared libraries.
-
-/lost+found:
-This directory is generally empty. When the system is shut down illegally, some files are stored here.
-
-/media:
-The Linux system will automatically recognize some devices, such as U disk, CD-ROM, etc. After recognition, Linux will mount the recognized devices to this directory.
-
-/mnt:
-The system provides this directory to allow users to temporarily mount other file systems. We can mount the optical drive on /mnt/, and then enter the directory to view the contents of the optical drive.
-
-/opt:
- This is the directory where additional software is installed for the host. For example, if you install an ORACLE database, you can put it in this directory. The default is empty.
- 
-/proc:
-This directory is a virtual directory, which is a mapping of system memory. We can obtain system information by directly accessing this directory.
-The content of this directory is not in the hard disk but in the memory. We can also directly modify some of the files inside.
-
-/root:
-This directory is the system administrator's home directory, also known as the super administrator.
-
-/sbin:
-s is the meaning of Super User. Here is stored the system management program used by the system administrator.
-
-/selinux:
- This directory is unique to Redhat/CentOS. Selinux is a security mechanism similar to windows firewall, but this mechanism is more complicated. This directory stores selinux-related files.
- 
-/srv:
- This directory stores some data that needs to be extracted after the service is started.
- 
-/sys:
- This is a big change in the linux2.6 kernel. A new file system sysfs in the 2.6 kernel is installed in this directory.
-The sysfs file system integrates the following three types of file system information: the proc file system for process information, the devfs file system for devices, and the devpts file system for pseudo terminals.
-The file system is an intuitive reflection of the kernel device tree.
-When a kernel object is created, the corresponding files and directories are also created in the kernel object subsystem.
-
-/tmp:
-This directory is used to store some temporary files.
-
-/usr:
- This is a very important directory. Many user applications and files are placed in this directory, similar to the program files directory under windows.
- 
-/usr/bin:
-Applications used by system users.
-
-/usr/sbin:
-The more advanced management programs and system daemons used by super users.
-
-/usr/src:
-The kernel source code is placed in the default directory.
-
-/var:
-This directory stores things that are constantly expanding, and we are used to putting those frequently modified directories under this directory. Includes various log files.
-
-/run:
-It is a temporary file system that stores information since the system was started. When the system restarts, the files in this directory should be deleted or cleared. If you have a /var/run directory on your system, you should point it to run.
-
-In the Linux system, there are several directories that are more important. You need to be careful not to delete or change internal files by mistake.
-/etc: As mentioned above, this is the configuration file in the system. If you change a file in this directory, the system may not start.
-/bin, /sbin, /usr/bin, /usr/sbin: This is the default directory where the system executes files. For example, ls is in the /bin/ls directory.
-It is worth mentioning that /bin, /usr/bin are instructions for system users (all users except root), and /sbin, /usr/sbin are instructions for root.
-
-/var: This is a very important directory, there are many programs running on the system, then each program will have a corresponding log, and these logs are recorded in this directory, specifically in the /var/log directory, in addition The default placement of mail is also here.
-
-## Solution for forgotten password
-
-## Telnet
 
 ## Basic file attributes
 
-## File directory management
+chgrp: change file group, input: 
+``` 
+# chgrp 
+``` 
+    ls: List directories and file names
+    cd: switch directory
+    pwd: display the current directory
+    mkdir: create a new directory
+    rmdir: delete an empty directory
+    cp: copy files or directories
+    rm: remove files or directories
+    mv: move files and directories, or modify the names of files and directories
+
 
 ## User and user group management
 
+if you want to add new user:
+```
+useradd [option] [username]
+```
+options:
+
+    -c comment Specify a comment description.
+    -d directory Specifies the user's home directory. If this directory does not exist, you can also use the -m option to create the home directory.
+    -g user group Specifies the user group to which the user belongs.
+    -G user group, user group Specifies the additional group to which the user belongs.
+    -s Shell file Specify the user's login shell.
+    -u user number Specify the user number of the user. If the -o option is also available, you can reuse the identification number of other users.
+
+If you want to delete:
+```$xslt
+userdel -r [username]
+```
+
 ## Disk management
+df: List the overall disk usage of the file system
+```$xslt
+df [option] [name]
+```
+the options are listed down below:
+
+    -a: List all file systems, including system-specific /proc file systems;
+    -k: display each file system with the capacity of KBytes;
+    -m: display each file system with the capacity of MBytes;
+    -h: display in GBytes, MBytes, KBytes and other formats that people can read easily;
+    -H: replace M=1024K with M=1000K;
+    -T: display the file system type, along with the filesystem name of the partition (eg ext3) is also listed;
+    -i: display the number of inodes without using hard disk capacity
+
+
+fdisk: used for disk partition
+```$xslt
+fdisk [-l] [name]
+```
 
 ## Vi/Vim
+input:
+```$xslt
+vim [path]
+```
+to start,and then input 
 
-## Yum instruction
+    i Switch to input mode to enter characters.
+    x Delete the character at the current cursor position.              
+    : Switch to the bottom line command mode to enter commands at the bottom line
+    
+In the bottom line mode, input:
 
-## Summary of common instructions
+     q Exit the program
+     w Save the file
+
 
 ## Thoughts
-
+From learning the Linux system,  i realized that Linux and MacOS are both developed from Unix system, there are a lot of similar places. What's more, The Linux system tool chain is complete, and a suitable development environment can be configured with simple operations, which can simplify the development process, reduce the obstacles of simulation tools in development, and make the system more portable; I think that is the main reason that why nowadays most programmers prefer Linux to other systems.
 
 <div style='display: none'>
 
