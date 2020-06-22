@@ -1,7 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin3" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="65005f8f-8b8c-4f09-965f-1afbb5fecef5" name="Default Changelist" comment="" />
+    <list default="true" id="65005f8f-8b8c-4f09-965f-1afbb5fecef5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/03/cce2dffa3ed65c5ec2c82e5a2dbb0a13e5c45108f15efa7f6f8279ce50e9f4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/17/429ee2917e136289202d981c17f4dbdbefe182179694f0ebdfe16b0cc9a250" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/18/4d27ea84f2f2f135ec7658c32aaca7058ae8dcba2dac97886f02aa369639e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/1c/13582bee2f4c90216b11d8116e7f7d6a8d9f5a8484a6ad6e633fdacb3a24bb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/34/5ae6ae18e95267b8161426a8885dc16c4c26bbaf40a92dd35d68d6c0d3f3ba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/50/a78d936f669ea5a825ec8f7eff4520e24204758524fefbbcde7bfd0f6b7e9b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/51/d46cceea6c3b5adf338f70ad8126ace3ad2c04142a192e249fa3e10167eb63" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/61/2e7a4ee5d82d8e9cf70475d374d04f2521fb172a536961983d9535684cc566" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/62/7c2e1daa0a86d7be948a819a8a20312c2da3a735142f883dfeff968720624d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/63/1af3bb5537ae995a54098c2338ab5dfd06fa1e736e6f1f12c4c1d5fe7f451f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/69/0bcf552a726c2d9c386bbba866e35ac5a07af5bb10ed8e04b041e6b83e455e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/6b/d231c0e08f3fc3f5e332453ce0059d8a8679880c9dc18ad19f834d9480b3f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/7b/94997f083ae9eba76bedaf3a6b21156fa440233a9db84fe77237f01895bece" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/7e/fdea0b38dab5fd088455a411baaef60d221da4ca21f351453ec22e8777edaa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/87/05ffc1832327fafe7c514edf15938baff08373214cf0b73d1111e79a28c117" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/88/b37745b804d727cb82fafcd6ec635dd7a77775538b935df866fa1d2a4d1de7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/8d/ef1799c2091dab4529b007f50f1c2801f30eb36f563cb68ca7a07bfc8e3e31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/8e/1b281e668db1408dedd63562fe72c893fecdd00d28959968b7ba913aa1a405" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/94/bf65fa37d3beff7792be67de26be4e1f689dd88aaefeea59138e98e13801da" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/97/b029ead4f27addc3ef481b965c2625e374131d8c3fb8f8ee7d984cc0a3679c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a4/b1fdbce5d4aa230ef0faea3e3a05b9f428512a74464c8f788379652a43a34b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b0/50db2ef01b3dfcf1174c67f5aaa1a36098fb4e6e92348290f62673af055712" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b2/f5f9efe7ca2b2464dca4aa3125311fc2f700139b3fe928fcbf9e979302a205" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b4/d26851f433f2797f71960cd96e4de4824bdf7c9c1f4523b69003fba0acd417" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/bc/f1cef90edc3f3a26d6862d0c25231098e85671045c2aec24c87efaf8b390c2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/c4/0fc310378e553e23c6b3c94a98da431a876224e02566e7f22009fe93b327a0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/c4/83209aeb7d60c3f33363a954e1fdc6ff6e406a01a91954ccf02341cc766629" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/cd/a2152a5fda3a9b8d2be02fa5f06ff7f7678696ed0d001a8e3b76010455d324" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/da/9ed1b551ff868c2db37e057d56f8a0806f456fad31c32aaf529149894c09b3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/eb/163de92103a63cf54756ba9be7079feb5da3ec88c2ab01cf377214600ac3e1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f1/ca9d061fe8b47bea462aea5ee20cf848bc5790df8f719cd63175ccc5080fa8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f6/cf934d560a06971180dc74b9ab7b1f9138234396bb88a9ad6303ad3fa8ed7a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/fb/a94f5834a7fb12cc1dc647d3114739fd8c9614ab26155857248222527bf630" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/ff/a8444bff66100d5df9363fa332eb986d6ae8eeb59dd2ab396e1a8d8a296f8a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/another-pagex.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another-page5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/2.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/2.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/2.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/3.1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" beforeDir="false" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f2/e9dfcfbd944ba6efee09450fa0ef9ada6cc29ea9bda003389c851b643e9e54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,18 +80,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1dW6MQpIF6ZDfgSTEhzY0ue4Psn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,10 +110,35 @@
       <updated>1592528453453</updated>
       <workItem from="1592528454911" duration="540000" />
       <workItem from="1592529103033" duration="1056000" />
+      <workItem from="1592726714674" duration="14423000" />
+      <workItem from="1592809672028" duration="49000" />
+      <workItem from="1592809796811" duration="70000" />
+      <workItem from="1592809910039" duration="6173000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="105" y="100" key="SettingsEditor" timestamp="1592809926576">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="105" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1592809926576" />
   </component>
 </project>

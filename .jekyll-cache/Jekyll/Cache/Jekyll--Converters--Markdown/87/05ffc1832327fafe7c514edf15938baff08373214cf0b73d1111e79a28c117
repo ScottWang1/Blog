@@ -1,4 +1,4 @@
-I"k<h2 id="study-notes">Study notes</h2>
+I"®<h2 id="study-notes">Study notes</h2>
 
 <div style="display: none">
    Text can be **bold**, _italic_, or ~~strikethrough~~.
@@ -11,5 +11,7 @@
 <p><a href="./another-page3.html">Learning Maven</a>.</p>
 
 <p><a href="./another-page4.html">Learning JVM</a>.</p>
+
+<p><a href="./another-page5.html">The Garbage Collection</a>.</p>
 
 :ET
