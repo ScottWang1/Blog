@@ -59,5 +59,48 @@ The immediate disadvantage of semispace copying is the need to maintain a second
 Figure 4.5 show that copying collection can be made more efficient that mark-sweep collection, provided that the heap is large enough and r is small enough. 
 ## Reference counting
  Rather than tracing reachable objects and then inferring that all unvisited objects must be garbage, reference counting operates directly on objects as references are created or destroyed.
+It maintains a simple invariant: an object is presumed to be live if and only if the number of references to that object is greater than zero.
+![图片pic1]({{ "/assets/images/5.1.png" | absolute_url }})
+Algorithm 5.1, reference counts are incremented or decremented as references to objects are created or destroyed.
+##### Advantages and disadvantages of reference counting
+Potentially, reference counting can recycle memory as soon as an object becomes garbage. Consequently, it may continue to operate satisfactorily in a nearly full heap, unlike tracing collectors which need some headroom.  
+Since reference counting operates directly on the sources and targets of pointers, the locality of a reference counting algorithm may be no worse than that of its client program and it can be implemented without assistance from or knowledge of the run-time system. In particular, it is not necessary to know the roots of the program.It can reclaim some memory even if parts of the system are unavailable: this is particularly useful in distributed system  
+Unique pointers ensure that an object has a single 'owner'. When this owner is destroyed, the object also can be destroyed. 
+
+Unfortunately, there are also a number of disadvantages to reference counting. First, reference counting imposes a time overhead on the mutator.  
+Second, both the reference count manipulations and the pointer load or store must be a single atomic action in order to prevent races between mutator threads which would risk
+premature reclamation of objects.   
+Third, naive reference counting turns read-only operations into ones requiring stores to memory. These writes 'pollute' the cache and induce extra memory traffic. 
+##### Improving efficiency
+Deferral: Deferred reference counting trades fine grained incrementality (the immediate recovery of all garbage) for efficiency. The identification of some garbage objects is deferred to a reclamation phase at the end of some period. These schemes eliminate some barrier operations.  
+Coalescing: Many reference count adjustments are temporary and hence 'unnecessary'; programmers often remove them by hand. In some special cases, this can also be done by the compiler. However, it is also possible to do this more generally at run time by tracking only the state of an object at the beginning and end of some period. This coalesced reference counting ignores all but the first modification to a field of an object in each period.  
+Buffering: Buffered reference counting also defers identification of garbage. However, unlike deferred or coalesced reference counting, it buffers all reference count increments and decrements for later processing. Only the collector thread is allowed to apply reference count modifications. Buffering considers when to apply reference count modifications not whether to.
+##### Summary
+Reference counting taxes every pointer read and write operation and thus imposes a much larger tax on throughput than tracing does. Furthermore, multithreaded applications require the manipulation of reference counts and updating of pointers to be expensively synchronised. This tight coupling of mutator actions and memory manager risks some fragility, especially if 'unnecessary' reference count updates are optimised away by hand. Finally, reference counts increase the sizes of objects.
+Because it cannot reclaim an object until the last pointer to that object has been removed, it cannot reclaim cycles of garbage.  
+Its drawbacks make simple reference counting uncompetitive as a general purpose memory management component of a virtual machine, especially if the majority of objects managed are small, cycles are common and the rate of pointer mutation is high.  
+Reference counting can play well in a mixed ecology where the lifetimes of most objects are sufficiently simple to be managed explicitly. Furthermore, it can be implemented as part of a library rather than being baked into the language's run-time system. It can therefore give the programmer complete control over its use, allowing her to make the decision between performance overhead and guarantees of safety.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [back](./)

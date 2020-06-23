@@ -23,11 +23,11 @@ layout: default
 
 [The Garbage Collection](./another-page5.html).
 
+[Docker](./another-page6.html).
 
+[Learning GO](./another-page7.html).
 
-
-
-
+[Learning Kubernetes](./another-page8.html).
 
 
 
