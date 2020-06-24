@@ -80,12 +80,38 @@ Reference counting taxes every pointer read and write operation and thus imposes
 Because it cannot reclaim an object until the last pointer to that object has been removed, it cannot reclaim cycles of garbage.  
 Its drawbacks make simple reference counting uncompetitive as a general purpose memory management component of a virtual machine, especially if the majority of objects managed are small, cycles are common and the rate of pointer mutation is high.  
 Reference counting can play well in a mixed ecology where the lifetimes of most objects are sufficiently simple to be managed explicitly. Furthermore, it can be implemented as part of a library rather than being baked into the language's run-time system. It can therefore give the programmer complete control over its use, allowing her to make the decision between performance overhead and guarantees of safety.
-
-
-
-
-
-
+## Comparing garbage collectors
+###### Pause time
+In a study of twenty Java benchmarks and six different collectors, Fitzgerald and Tarditi found that for each collector there was at least one benchmark that would have been at least 15% faster with a more appropriate collector.  
+The number of instructions executed to visit an object for mark-sweep tracing are fewer than those for copying tracing. Locality plays a significant part here as well.  
+ Prefetching techniques could be used to hide cache misses. However, it is an open question as to whether such techniques can be applied to copying collection without losing the benefits to the mutator of depth- first copying.  
+ If marking is combined with lazy sweeping, we obtain greatest benefit in the same circumstances that copying performs best: when the proportion of live data in the heap is small.
+The tracing collectors considered so far have all been stop-the-world: all mutator threads must be brought to a halt before the collector runs to completion, and we saw that deferred and coalesced reference counting, the most effective ways to improve reference counting performance, both reintroduce a stop-the-world pause to reconcile reference counts and reclaim garbage objects in the zero count table.  
+The immediate attraction of reference counting is that it should avoid such pauses, instead distributing the costs of memory management throughout the program.  
+###### Space
+ Algorithms may pay a per-object penalty, for example for reference count fields. Semispace copying collectors need additional heap space for a copy reserve; to be safe, this needs to be as large as the volume of data currently allocated, unless a fall-back mechanism is used. Non-moving collectors face the problem of fragmentation, reducing the amount of heap usable to the application.  
+Systems are typically configured to use a heap anything from 30% to 200% or 300% larger than the minimum required by the program. Hertz and Berger suggest that a garbage collected heap three to six times larger than that required by explicitly managed heaps is needed to achieve comparable application performance.  
+It is desirable for collectors to be not only complete but also to be prompt, that is, to reclaim all dead objects at each collection cycle. The basic tracing collectors presented in earlier chapters achieve this, but at the cost of tracing all live objects at every collection. However, modern high-performance collectors typically trade immediacy for performance, allowing some garbage to float in the heap from one collection to a subsequent one. Reference counting faces the additional problem of being incomplete; specifically, it is unable to reclaim cyclic garbage structures without recourse to tracing.
+## Allocation
+There are three aspects to a memory management system: (i) allocation of memory in the first place, (ii) identification of live data and (iii) reclamation for future use of memory previously allocated but currently occupied by dead objects.
+##### Sequential allocation
+It is simple and efficient, although Blackburn have shown that the fundamental performance difference between sequential allocation and segregated-fits free-list allocation for a Java system is on the order of 1% of total execution time.  
+It appears to result in better cache locality than does free-list allocation, especially for initial allocation of objects in moving collectors.  
+It may be less suitable than free-list allocation for non-moving collectors, if uncollected objects break up larger chunks of space into smaller ones, resulting in many small sequential allocation chunks as opposed to one or a small number of large ones.
+![图片pic1]({{ "/assets/images/7.1.png" | absolute_url }})
+##### Free-list allocation
+In free-list allocation, a data structure records the location and size of free cells of memory. The algorithm searches sequentially for a cell into which the request will fit.  
+When trying to satisfy an allocation request, a first-fit allocator will use the first cell it finds that can satisfy the request. If the cell is larger than required, the allocator may split the cell and return the remainder to the free-list. However, if the remainder is too small then the allocator cannot split the cell. Further, the allocator may follow a policy of not splitting unless the remainder is larger than some absolute or percentage size threshold.  
+Next-fit is a variation of first-fit that starts the search for a cell of suitable size from the point in the list where the last search succeeded. When it reaches the end of the list it starts over from the beginning. The idea is to reduce the need to iterate repeatedly past the small cells at the head of the list. While next-fit is intuitively appealing, in practice it exhibits drawbacks.  
+Best-fit intuitively seems good with respect to fragmentation, but it can lead to a number of quite small fragments scattered through the heap. First-fit can also lead to a large number of small fragments, which tend to cluster near the beginning of the free-list. Next-fit will tend to distribute small fragments more evenly across the heap, but that is not necessarily better. The only total solution to fragmentation is compaction or copying collection.
+##### Summary
+There are some particular issues to consider when designing an allocator for a garbage collected system: Allocation cannot be considered independently of the collection algorithm. In particular, non-moving collectors such as mark-sweep more or less demand a free-list approach as opposed to sequential allocation, and some local allocation buffer approaches also use sequential allocation in conjunction with mark-sweep collection. Conversely, sequential allocation makes the most sense for copying and compacting collectors, because it is fast and simple. It is not necessarily much faster than segregated-fits free-list allocation, but its simplicity may offer better overall reliability.  
+If a collector uses mark-sweep but offers occasional or emergency compaction to eliminate fragmentation, then it needs to provide for updating the allocation data structures to reflect the state of the world after compaction.  
+Block-based allocation can reduce per-object overheads, both for the language implementation and for collector metadata. This may be offset by the space consumed by unallocated cells and the unusable space within some blocks. Block-based allocation may also fit well with organisations that support multiple spaces with different allocation and collection techniques.  
+Segregated-fits is generally faster than single free-list schemes. This is of greater importance in a garbage collected context since programs coded assuming garbage collection tend to do more allocation than ones coded using explicit freeing.
+Because a collector frees objects in batches, the techniques designed for recombining free cells for explicit freeing systems are less relevant. The sweep phase of mark-sweep can rebuild a free-list efficiently from scratch. In the case of compacting collectors, in the end there is usually just one large free chunk appropriate for sequential allocation. Copying similarly frees whole semispaces without needing to free each individual cell.
+## Partitioning the heap
+It is often effective to split the heap into partitions, each managed under a different policy or with a different mechanism.The best known example is generational collection, which segregates objects by age and preferentially collects younger objects.
 
 
 

@@ -25,7 +25,7 @@ layout: default
 
 [Docker](./another-page6.html).
 
-[Learning GO](./another-page7.html).
+[Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide](./another-page7.html).
 
 [Learning Kubernetes](./another-page8.html).
 

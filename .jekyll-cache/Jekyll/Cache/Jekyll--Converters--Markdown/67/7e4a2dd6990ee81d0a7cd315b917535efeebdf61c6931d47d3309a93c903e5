@@ -1,0 +1,15 @@
+I"A<h2 id="introduction">Introduction</h2>
+<p>A wide variety of applications use Java Platform, Standard Edition (Java SE), from small applets on desktops to web services on large servers. In support of this diverse range of deployments, the Java HotSpot virtual machine implementation (Java HotSpot VM) provides multiple garbage collectors, each designed to satisfy different requirements. This is an important part of meeting the demands of both large and small applications. Java SE selects the most appropriate garbage collector based on the class of the computer on which the application is run. <br />
+A garbage collector (GC) is a memory management tool. It achieves automatic memory management through the following operations:<br />
+Allocating objects to a young generation and promoting aged objects into an old generation.<br />
+Finding live objects in the old generation through a concurrent (parallel) marking phase. The Java HotSpot VM triggers the marking phase when the total Java heap occupancy exceeds the default threshold.  <br />
+Recovering free memory by compacting live objects through parallel copying. See the sections The Parallel Collector and Garbage-First Garbage Collector.</p>
+
+<p>The serial collector is usually adequate for most “small” applications (those requiring heaps of up to approximately 100 megabytes (MB (on modern processors). The other collectors have additional overhead or complexity, which is the price for specialized behavior. If the application does not need the specialized behavior of an alternate collector, use the serial collector. One situation where the serial collector is not expected to be the best choice is a large, heavily threaded application that runs on a machine with a large amount of memory and two or more processors. When applications are run on such server-class machines, the parallel collector is selected by default.</p>
+<h2 id="ergonomics">Ergonomics</h2>
+<p>Ergonomics is the process by which the Java Virtual Machine (JVM) and garbage collection tuning, such as behavior-based tuning, improve application performance. The JVM provides platform-dependent default selections for the garbage collector, heap size, and runtime compiler. These selections match the needs of different types of applications while requiring less command-line tuning. In addition, behavior-based tuning dynamically tunes the sizes of the heap to meet a specified behavior of the application.</p>
+<h5 id="behavior-based-tuning">Behavior-Based Tuning</h5>
+<p>For the parallel collector, Java SE provides two garbage collection tuning parameters that are based on achieving a specified behavior of the application: maximum pause time goal and application throughput goal; see the section The Parallel Collector.The application requires a heap large enough to at least hold all of the live data.</p>
+
+<p><a href="./">back</a></p>
+:ET
