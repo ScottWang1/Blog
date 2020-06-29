@@ -1,0 +1,81 @@
+I"]<h2 id="architecture">Architecture</h2>
+<p><img src="http://localhost:4000/assets/images/arch.png" alt="图片pic1" /></p>
+
+<p>Core layer: the core function of Kubernetes, providing API to build high-level applications externally, and providing plug-in application execution environment internally<br />
+Application layer: deployment (stateless applications, stateful applications, batch tasks, cluster applications, etc.) and routing (service discovery, DNS resolution, etc.), Service Mesh (partially located in the application layer)</p>
+
+<p>Management layer: system metrics (such as infrastructure, container and network metrics), automation (such as automatic scaling, dynamic Provision, etc.) and policy management (RBAC, Quota, PSP, NetworkPolicy, etc.), Service Mesh (partially located in the management layer)</p>
+
+<p>Interface layer: kubectl command line tool, client SDK and cluster federation</p>
+
+<p>Ecosystem: The ecosystem of large container cluster management and scheduling above the interface layer can be divided into two categories</p>
+
+<p>Outside of Kubernetes: logs, monitoring, configuration management, CI/CD, Workflow, FaaS, OTS applications, ChatOps, GitOps, SecOps, etc.</p>
+
+<p>Inside Kubernetes: CRI, CNI, CSI, mirror warehouse, Cloud Provider, configuration and management of the cluster itself, etc.</p>
+<h2 id="api">API</h2>
+<p>For cloud computing systems, the system API is actually in the dominance of system design. As mentioned earlier in this article, every time a new function is supported by the Kubernetes cluster system, a new technology will be introduced, and the corresponding API object will be newly introduced to support the Function management operation.<br />
+1.All APIs should be declarative<br />
+  2.API objects are complementary and composable<br />
+  3.High-level APIs are designed based on operational intent<br />
+  4.The low-level API is designed according to the control needs of the high-level API  <br />
+  5.Try to avoid simple encapsulation and do not have internal hiding mechanisms that are not explicitly known by external APIs<br />
+  6.API operation complexity is proportional to the number of objects<br />
+  7.API object state cannot depend on network connection state<br />
+  8.Try to avoid making the operation mechanism dependent on the global state, because it is very difficult to ensure the synchronization of the global state in a distributed system</p>
+<h2 id="etcd">Etcd</h2>
+<p>Etcd is a very important component in the Kubernetes cluster, which is used to save all the network configuration and object status information of the cluster.</p>
+
+<p>Etcd uses the Raft consensus algorithm to achieve, is a distributed consistent KV storage, mainly used for shared configuration and service discovery</p>
+<h2 id="interface">Interface</h2>
+
+<p><img src="http://localhost:4000/assets/images/interface.png" alt="图片pic1" /></p>
+
+<h4 id="cri">CRI</h4>
+<p>container runtime interface, providing computing resources</p>
+
+<p>The interface between the container and the image service is defined in CRI. Since the container runtime and the image life cycle are isolated from each other, two services need to be defined.</p>
+<h4 id="cni">CNI</h4>
+<p>Container network interface, providing network resources</p>
+
+<p>CNI consists of a set of specifications and libraries for configuring the network interface of Linux containers, and also includes some plug-ins. CNI only cares about network allocation when the container is created, and releases network resources when the container is deleted.</p>
+<h4 id="csi">CSI</h4>
+<p>Container storage interface, providing storage resources</p>
+
+<p>CSI attempts to establish an industry-standard interface specification. With the help of the CSI Container Orchestration System (CO), any storage system can be exposed to its own container workload.</p>
+
+<h1 id="pod">Pod</h1>
+<p>Pod represents the process running in the cluster<br />
+Pods encapsulate application containers (in some cases, several containers), storage, independent network IP, and policy options for managing how containers run. Pod represents a unit of deployment: an instance of an application in kubernetes, which may be composed of one or more containers to share resources.
+<img src="http://localhost:4000/assets/images/pod.png" alt="图片pic1" /> <br />
+Pod can share two kinds of resources: network and storage <br />
+Network<br />
+Each Pod will be assigned a unique IP address. All containers in the Pod share network space, including IP addresses and ports. Pod containers can use localhost to communicate with each other. When the container in the Pod communicates with the outside world, it must allocate shared network resources (for example, use the host’s port mapping).<br />
+Storage<br />
+You can specify multiple shared volumes for a Pod. All containers in the Pod can access the shared volume. Volume can also be used to persist storage resources in the Pod to prevent file loss after the container restarts.</p>
+<h4 id="init-container">Init container</h4>
+<p>Init containers are very similar to ordinary containers, except for the following two points:</p>
+
+<p>The Init container always runs until it completes successfully.
+Each Init container must complete successfully before the next Init container starts.<br />
+They can contain and run utilities, but for security reasons, it is not recommended to include these utilities in the application container image.<br />
+They can include installation using tools and customized code, but they cannot appear in the application image. For example, it is not necessary to create another image from FROM, just use tools like sed, awk, python, or dig during the installation process.<br />
+Application images can separate the roles of creation and deployment without the need to join them to build a single image.<br />
+The Init container uses Linux Namespace, so it has a different view of the file system than the application container. Therefore, they can have access to Secret, but the application container cannot.<br />
+They must be run before the application container is started, and the application containers are run in parallel, so the Init container can provide a simple way to block or delay the start of the application container until a set of prerequisites is met.</p>
+
+<h4 id="pause-container">Pause container</h4>
+<p>Pause container, also known as Infra container.<br />
+For example, there is now a Pod, which contains a container A and a container B, the two of them will share the Network Namespace. The solution in Kubernetes is this: it will create a small Infra container in each Pod to share the Network Namespace of the entire Pod.<br />
+Infra container is a very small image, about 700KB, is a container written in C language and always in a “suspended” state. With such an Infra container, all other containers will be added to the Network Namespace of the Infra container through Join Namespace.</p>
+
+<h4 id="pod-life-cycle">Pod life cycle</h4>
+<p><img src="http://localhost:4000/assets/images/life.png" alt="图片pic1" /> <br />
+Pending: The Pod has been accepted by the Kubernetes system, but one or more container images have not yet been created. The waiting time includes the time to schedule the Pod and the time to download the image via the network, which may take some time.<br />
+Running: The Pod has been bound to a node, and all the containers in the Pod have been created. At least one container is running, or is in a startup or restart state.<br />
+Successful (Succeeded): All containers in the Pod are successfully terminated and will not be restarted.<br />
+Failed: All containers in the Pod have been terminated, and at least one container was terminated due to failure. That is, the container exits with a non-zero status or is terminated by the system.<br />
+Unknown: Unable to obtain the status of the Pod for some reason, usually because the communication with the host where the Pod is located fails.</p>
+
+<p><a href="./">back</a></p>
+:ET

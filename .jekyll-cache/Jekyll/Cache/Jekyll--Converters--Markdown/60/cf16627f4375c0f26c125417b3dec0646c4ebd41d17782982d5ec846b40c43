@@ -1,0 +1,12 @@
+I"<h2 id="the-structure-of-the-java-virtual-machine">The Structure of the Java Virtual Machine</h2>
+<p>The basic data types supported by the Java virtual machine in the Java language are as follows:</p>
+<pre><code class="language-xslt">byte:    //Complement of 1 byte signed integer 
+short:   //Complement of 2 byte signed integer 
+int:     //Complement of 4 byte signed integer
+long:    //Complement of 8-byte signed integer 
+float:   //4-byte IEEE754 single-precision floating-point number 
+double:  //8-byte IEEE 754 double-precision floating-point number 
+char:    //2-byte unsigned Unicode character 
+</code></pre>
+<p>This chapter introduced the Class file format, data type, primitive type, reference type, runtime data area, stack frame, bytecode instructions, etc.</p>
+:ET

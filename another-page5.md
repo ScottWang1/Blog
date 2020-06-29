@@ -111,19 +111,68 @@ Block-based allocation can reduce per-object overheads, both for the language im
 Segregated-fits is generally faster than single free-list schemes. This is of greater importance in a garbage collected context since programs coded assuming garbage collection tend to do more allocation than ones coded using explicit freeing.
 Because a collector frees objects in batches, the techniques designed for recombining free cells for explicit freeing systems are less relevant. The sweep phase of mark-sweep can rebuild a free-list efficiently from scratch. In the case of compacting collectors, in the end there is usually just one large free chunk appropriate for sequential allocation. Copying similarly frees whole semispaces without needing to free each individual cell.
 ## Partitioning the heap
-It is often effective to split the heap into partitions, each managed under a different policy or with a different mechanism.The best known example is generational collection, which segregates objects by age and preferentially collects younger objects.
+It is often effective to split the heap into partitions, each managed under a different policy or with a different mechanism. The best known example is generational collection, which segregates objects by age and preferentially collects younger objects. These reasons include object mobility, size, lower space overheads, easier identification of object properties, improved garbage collection yield, reduced pause time, better locality, and so on.
+##### Partitioning by mobility
+The first is Conservative stack scanning, which treats every slot in every stack frame as a potential reference, applying tests to discard those values found that cannot be pointers . Since conservative stack scanning identifies a superset of the true pointer slots in the stack, it is not possible to change the values of any of these. Thus, conservative collection cannot move any object directly referenced by the roots. However, if appropriate information is provided for objects in the heap, then a mostly-copying collector can safely move any object except for one which appears to be directly reachable from ambiguous roots.
+##### Partitioning by size
+Sometimes It may also be undesirable to move some objects. A common strategy is to allocate objects larger than a certain threshold into a separate large object space (LOS). Large objects are typically placed on separate pages, and are managed by a non-moving collector such as mark-sweep. Notice that, by placing an object on its own page, it can also be 'copied' virtually, either by Baker's Treadmill or by remapping virtual memory pages.
 
+##### Partitioning for space
+It may be useful to segregate objects in order to reduce overall heap space requirements. Particularly for young objects which benefit from being laid out in allocation order.  
+Both copying and sliding collectors eliminate fragmentation and allow sequential allocation. However, copying collectors require twice the address space of non-moving collectors and mark-compact collection is comparatively slow. It is therefore often useful to segregate objects so that different spaces can be managed by different memory managers.  
+To those objects with higher rates of allocation and higher expected mortality can be placed in a space managed by a copying collector for fast allocation and cheap collection.
+##### Partitioning by kind
+Physically segregating objects of different categories also allows a particular property, such as type, to be determined simply from the address of the object rather than by retrieving the value of one of its field or, worse, by chasing a pointer. It offers a cache advantage since it removes the necessity to load a further field and segregation by property, whereby all objects sharing the same property are placed in the same contiguous chunk in order to allow a quick address-based identification of the space, allows the property to be associated with the space rather than replicated in each object's heade
+##### Partitioning for yield
+The best known reason for segregation is to exploit object demographics.   
+If the distribution of object lifetimes is sufficiently skewed, then it is worth repeatedly collecting a subset (or subsets) of the heap rather than the entire heap. When the space chosen for collection has a sufficiently low survival rate, a partitioned collection strategy can be very effective.
 
+##### Partitioning to reduce pause time
+By restricting the size of the condemned space that the collector traces, we bound the volume of objects scavenged or marked, and hence the time required for a garbage collection. Nevertheless, in general, partitioned collection cannot reduce worst-case pause times.
 
+##### Summary
+There're many other methods: Partitioning for locality; Partitioning by thread; Partitioning by availability and Partitioning by mutability. All of them lead to a question that how to partition.  
+To align chunks on power of two boundaries. In that case an object's space is encoded into the highest bits of its address and can be found by a shift or mask operation.   
+The alternative is to implement spaces as discontiguous sets of chunks of address space.
 
+Partitioning decisions can be made statically (at compile time) or dynamically — when an object is allocated, at collection time or by the mutator as it accesses objects.
 
+## Generational garbage collection
+It is told that long-lived objects tend to accumulate in the bottom of a heap managed by a mark-compact collector, and that some collectors avoid compacting this dense prefix. 
+Generational collectors extend this idea by not considering the oldest objects whenever possible.It segregate objects by age into generations, typically physically distinct areas of the heap. Younger generations are collected in preference to older ones, and objects that survive long enough are promoted (or tenured) from the generation being collected to an older one.
+##### Measuring time
+There are two choices: bytes allocated or seconds elapsed. On the other hand, internally, object lifetimes are better measured by the number of bytes of heap space allocated between their birth and their death.  
+Unfortunately, the counter will include allocation by threads unrelated to the object in question.  
+In practice generational collectors often measure time in terms of how many collections an object has survived, because this is more convenient to record and requires fewer bits.
+##### Generations and heap layout
+The weak generational hypothesis, that most objects die young. On the other hand, there is much less evidence for the strong generational hypothesis that, even for objects that are not newly-created, younger objects will have a lower survival rate than older ones.
 
+ Collectors may use two or more generations, which may be segregated physically or logically. Each generation may be bounded in size or the size of one space may be traded against that of another.
+##### Multiple generations
+Adding further generations is one solution to the dilemma of how to preserve short pause times for nursery collections without incurring excessively frequent full heap collections, because the oldest generation has filled too soon. The role of the intermediate generations is to filter out objects that have survived collection of the youngest generation but do not live much longer. If a collector promotes all live objects en masse from the youngest generation, the survivors will include the most recently allocated objects despite the expectation that most of these will die very soon. By using multiple generations, the size of the youngest generation can be kept small enough to meet expected pause time requirements without increasing the volume of objects dying in the oldest generation shortly after their promotion.
+##### Adapting to program behaviour
+Adaptation is needed because objects' lifetime demographics are neither random nor stationary. Instead real programs (unlike toy ones or synthetic benchmarks) tend to operate in phases. There are a wide range of common patterns of behaviour. A set of live objects may gradually accumulate and then die all at once.  
+It is useful to be able to adapt garbage collectors in general to the mutator's behaviour, for example to reduce expected pause time or to improve overall throughput.
+##### Summary
+Generational garbage collection has proved to be a highly effective organisation, offering significant performance improvements for a wide range of applications. By limiting the size of the youngest generation, and concentrating collection effort on that generation, expected pause times can be reduced to a point where they are usually unnoticeable in many environments. This tactic can also increase overall throughput in two ways. First, it reduces the frequency with which long lived data is processed, and thereby not only reduces processing effort but also gives older objects more time to die (so that they need not be traced at all). Second, generational collectors usually allocate young objects sequentially in a nursery area. Sequential allocation obtains cache locality benefits because the memory consumption pattern is predictable.
 
+We looked at generational and other age-based collection schemes. Those algorithms partitioned objects by their age and chose a partition to collect based on some age-related property. For example, generational collectors preferentially collect the youngest partition (or generation). Although this strategy in particular is highly effective for a wide range of applications, it does not address all the problems facing the collector. So we examine schemes outside the age-based collection framework but still based on partitioning the heap.  
+There're Large object spaces; opological collectors; Bookmarking garbage collection and Ulterior reference counting.
 
+## Run-time interface
+##### Interface to allocation
+For our purposes we break allocation and initialisation down into three steps, not all of which apply in every language or case.
+1. Allocate a cell of the proper size and alignment. This is the job of the allocation subsystem of the memory manager.  
+2. System initialisation. By this we mean the initialisation of fields that must be properly set before the object is usable in any way. For example, in object-oriented languages this might include setting the method dispatch vector in the new object. It generally also includes setting up any header fields required by either the language,the memory manager or both. For Java objects this might include space for a hash code or synchronisation information, and for Java arrays we clearly need to record their length somewhere.  
+ 3. Secondary initialisation. By this we mean to set (or update) fields of the new object after the new object reference has 'escaped' from the allocation subsystem and has become potentially visible to the rest of the program, other threads and so on.
 
-
-
-
+## Concurrency preliminaries
+A processor is a unit of hardware that executes instructions. A thread is a sequential program, that is, an execution of a piece of software. A thread can be running (also called scheduled), ready to run, or blocked awaiting some condition such as arrival of a message, completion of input/output, or for a particular time to arrive. A scheduler, which is usually an operating system component, chooses which threads to schedule onto which processors at any given time. 
+##### Interconnect
+What distinguishes a multiprocessor from the general case of cluster, cloud or distributed computing is that it involves shared memory, accessible to each of the processor.
+## Fences and happens-before
+A memory fence is an operation on a processor that prevents certain reorderings of memory accesses. In particular it can prevent certain accesses issued before the fence, or certain accesses issued after the fence, or both, from being performed in an order that places them on the other side of the fence. For example, a total read fence requires all reads before the fence to happen before all reads issued after the fence.  
+This notion of happens-before can be formalised, and refers to requirements on the order in which operations occur on memory. Thus, the total read fence imposes a happens-before relationship between each previous read and each later read. Typically, atomic operations imply a total fence on all operations: every earlier read, write, and atomic operation must happen-before each later read, write, and atomic operation. However, other models are possible, such as acquire-release. In that model, an acquiring operation (think of it as being like acquiring a lock) prevents later operations from being performed before the acquire, but earlier reads and writes can happen after the acquire. A releasing operation is symmetrical: it prevents earlier operations from happening after the release, but later reads and writes may happen before the release. In short, operations outside an acquire-release pair may move inside it, but ones inside it may not move out. This is suitable for implementing critical sections.
 
 
 

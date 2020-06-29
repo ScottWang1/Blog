@@ -1,0 +1,5 @@
+I"<h2 id="architecture">Architecture</h2>
+<p><img src="http://localhost:4000/assets/images/arch.png" alt="图片pic1" /><br />
+Core layer: the core function of Kubernetes, providing API to build high-level applications externally, and providing plug-in application execution environment internally<br />
+Application layer: deployment (stateless applications, stateful applications, batch tasks, cluster applications, etc.) and routing (service discovery, DNS resolution, etc.), Service Mesh (partially located in the application layer)</p>
+:ET

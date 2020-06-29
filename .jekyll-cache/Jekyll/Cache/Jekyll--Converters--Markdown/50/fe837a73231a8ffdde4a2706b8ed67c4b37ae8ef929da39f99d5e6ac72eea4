@@ -1,9 +1,0 @@
-I"Ó<h2 id="introduction">Introduction</h2>
-<p>A wide variety of applications use Java Platform, Standard Edition (Java SE), from small applets on desktops to web services on large servers. In support of this diverse range of deployments, the Java HotSpot virtual machine implementation (Java HotSpot VM) provides multiple garbage collectors, each designed to satisfy different requirements. This is an important part of meeting the demands of both large and small applications. Java SE selects the most appropriate garbage collector based on the class of the computer on which the application is run. <br />
-A garbage collector (GC) is a memory management tool. It achieves automatic memory management through the following operations:<br />
-Allocating objects to a young generation and promoting aged objects into an old generation.<br />
-Finding live objects in the old generation through a concurrent (parallel) marking phase. The Java HotSpot VM triggers the marking phase when the total Java heap occupancy exceeds the default threshold.  <br />
-Recovering free memory by compacting live objects through parallel copying. See the sections The Parallel Collector and Garbage-First Garbage Collector.</p>
-
-<p><a href="./">back</a></p>
-:ET

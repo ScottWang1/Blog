@@ -1,0 +1,115 @@
+I"<div style="display: none">
+Docker资源
+Docker官方英文资源：
+
+docker官网：http://www.docker.com
+Docker windows入门：https://docs.docker.com/windows/
+Docker Linux 入门：https://docs.docker.com/linux/
+Docker mac 入门：https://docs.docker.com/mac/
+Docker 用户指引：https://docs.docker.com/engine/userguide/
+Docker 官方博客：http://blog.docker.com/
+Docker Hub: https://hub.docker.com/
+Docker开源： https://www.docker.com/open-source
+Docker中文资源：
+
+Docker中文网站：http://www.docker.org.cn
+Docker入门教程: http://www.docker.org.cn/book/docker.html
+Docker安装手册：http://www.docker.org.cn/book/install.html
+一小时Docker教程 ：https://blog.csphere.cn/archives/22
+Docker纸质书：http://www.docker.org.cn/dockershuji.html
+DockerPPT：http://www.docker.org.cn/dockerppt.html
+</div>
+
+<h2 id="overview">Overview</h2>
+<p>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.</p>
+<h2 id="docker-architecture">Docker architecture</h2>
+<p>Docker includes three basic concepts:<br />
+Image: Docker images are templates for creating Docker containers<br />
+Container: A container is an application or a group of applications that runs independently and is an entity that mirrors the runtime.<br />
+Repository: Repository is used to save images, which can be understood as a code warehouse in code control</p>
+<h2 id="operating-docker">Operating Docker</h2>
+<p>To creates a new container with ubuntu15.10 image:</p>
+<pre><code class="language-$xslt">$ docker run -i -t ubuntu:15.10 /bin/bashDocker 
+//-t:Specify a pseudo terminal or terminal in the new container
+//-i:Allows you to interact with the standard input (STDIN) inside the container
+</code></pre>
+<p>If you add -d behind docker run, will allow the background process.
+By running the ‘exit’ command to exit the container.</p>
+<pre><code class="language-$xslt">$ docker stop      //stop docker
+$ docker ps        //check the status
+$ docker           //See all command options
+$ docker pull      //pull image
+$ docker push      //push image to your accout
+$ docker start     //start a container
+$ docker restart   //restart
+$ docker exec      //enter the background container
+$ docker export    //export
+$ docker import    //import
+$ docker rm        //delete comntainer
+$ docker inspect   //View the underlying information of Docker
+$ docker images    //list all the images
+</code></pre>
+<p>More instructions can be found in <a href="https://www.runoob.com/docker/docker-command-manual.html">Docker instructions</a><br />
+Default website is <a href="https://hub.docker.com/">Docker Hub</a>, which is the main way to download image.</p>
+
+<h2 id="connection-between-docker-and-container">Connection between Docker and Container</h2>
+<p>Input: ‘docker run -d -P training/webapp python app.py’ to create a container. We use the -P parameter to create a container, and use docker ps to see that container port 5000 is bound to host port 32768, also, we can use -p to Specify the network address bound to the container, like ‘docker run -d -p 5000:5000 training/webapp python app.py’<br />
+The ‘docker port’ command allows us to quickly check the port binding status.<br />
+Port mapping is not the only way to connect docker to another container.<br />
+Docker has a connection system that allows multiple containers to be connected together and share connection information.<br />
+The docker connection creates a parent-child relationship, where the parent container can see the information of the child container.</p>
+<pre><code class="language-xslt">docker network create -d bridge test-net  
+//first create a new Docker network
+docker run -itd --name test1 --network test-net ubuntu /bin/bash 
+//Run a container and connect to the newly created test-net network
+
+</code></pre>
+<h2 id="dockerfile">Dockerfile</h2>
+<p>The Docker file is a file which used to build images, which goes like this:</p>
+<pre><code class="language-xslt">FROM nginx
+RUN echo 'this is a local nginx image' &gt; /usr/share/nginx/html/index.html
+</code></pre>
+<p>Then input:’docker build -t nginx:test .’ to build.<br />
+The dockerfile instructions:</p>
+<pre><code class="language-xslt">//Copy the file or directory from the context directory to the specified path in the container
+COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;source&gt;...  &lt;destination&gt;
+COPY [--chown=&lt;user&gt;:&lt;group&gt;] ["&lt;source&gt;",...  "&lt;destination&gt;"]
+//CMD used to run the program
+CMD ["&lt;file&gt;","&lt;param1&gt;","&lt;param2&gt;",...]
+//ENTRYPOINT,similar with CMD instruction
+ENTRYPOINT ["&lt;executeable&gt;","&lt;param1&gt;","&lt;param2&gt;",...]
+//ENV Set environment variables
+ENV &lt;key&gt; &lt;value&gt;
+ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;...
+//VOLUME Define anonymous data volume, data lost
+VOLUME ["&lt;path1&gt;", "&lt;path2&gt;"...]
+VOLUME &lt;path&gt;
+//EXPOSE Declared port
+EXPOSE &lt;port1&gt; [&lt;port2&gt;...]
+//WORKDIR to Specify working directory
+WORKDIR &lt;path&gt;
+//Specify the user and user group to execute subsequent commands
+USER &lt;User&gt;[:&lt;group&gt;]
+//Specify a program or instruction to monitor the running status of the docker container service
+HEALTHCHECK [option] CMD &lt;instruction&gt;：setting order which can monitor the status
+HEALTHCHECK NONE：Block out its health check instructions
+HEALTHCHECK [option] CMD &lt;instruction&gt; : CMD following instructions
+//Delay the execution of build commands
+ONBUILD &lt;other instructions&gt;
+</code></pre>
+<p>CMD is usually used for changing parameters</p>
+
+<h2 id="build-image">Build image</h2>
+<p>The example format is shown below:
+ <img src="http://localhost:4000/assets/images/dockerfile.png" alt="图片pic1" />
+The ‘FROM’ in the first line specify which image source to use.<br />
+Each instruction creates a new step on the image, and the prefix of each instruction must be capitalized.<br />
+Then input ‘docker build’ to build.</p>
+
+<h2 id="thoughts">Thoughts</h2>
+<p>By learning Docker, I realized that docker can solve the problem that the program can only be run in your computer because of surroundings. For example, if you want to run a program which made in other circumstances, in order to make it work, you need to download Java, Tomcat,Mysql in your Linux system to build the operating environment which is too complicated. By docker, the only thing that you need to do is pull an image from the website source.<br />
+So by using docker, A whole set of environment can be packaged and packaged as a mirror image, without repeated configuration of the environment. And Process is isolated between Docker containers, no one will affect anyone.<br />
+What’s more, Docker is much lighter than virtual machine.</p>
+
+<p><a href="./">back</a></p>
+:ET

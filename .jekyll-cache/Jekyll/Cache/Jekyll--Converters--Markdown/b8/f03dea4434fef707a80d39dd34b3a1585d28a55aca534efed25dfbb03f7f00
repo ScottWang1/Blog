@@ -1,0 +1,20 @@
+I"�<h2 id="architecture">Architecture</h2>
+<p><img src="http://localhost:4000/assets/images/arch.png" alt="图片pic1" /></p>
+
+<p>Core layer: the core function of Kubernetes, providing API to build high-level applications externally, and providing plug-in application execution environment internally<br />
+Application layer: deployment (stateless applications, stateful applications, batch tasks, cluster applications, etc.) and routing (service discovery, DNS resolution, etc.), Service Mesh (partially located in the application layer)</p>
+
+<p>Management layer: system metrics (such as infrastructure, container and network metrics), automation (such as automatic scaling, dynamic Provision, etc.) and policy management (RBAC, Quota, PSP, NetworkPolicy, etc.), Service Mesh (partially located in the management layer)</p>
+
+<p>Interface layer: kubectl command line tool, client SDK and cluster federation</p>
+
+<p>Ecosystem: The ecosystem of large container cluster management and scheduling above the interface layer can be divided into two categories</p>
+
+<p>Outside of Kubernetes: logs, monitoring, configuration management, CI/CD, Workflow, FaaS, OTS applications, ChatOps, GitOps, SecOps, etc.</p>
+
+<p>Inside Kubernetes: CRI, CNI, CSI, mirror warehouse, Cloud Provider, configuration and management of the cluster itself, etc.</p>
+<h2 id="api">API</h2>
+<p>For cloud computing systems, the system API is actually in the dominance of system design. As mentioned earlier in this article, every time a new function is supported by the Kubernetes cluster system, a new technology will be introduced, and the corresponding API object will be newly introduced to support the Function management operation, understand the master API.</p>
+
+<p><a href="./">back</a></p>
+:ET
