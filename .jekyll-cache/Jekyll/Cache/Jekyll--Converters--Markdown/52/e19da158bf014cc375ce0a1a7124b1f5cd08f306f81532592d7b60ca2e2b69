@@ -1,0 +1,29 @@
+I"�<h2 id="study-notes">Study notes</h2>
+
+<div style="display: none">
+   Text can be **bold**, _italic_, or ~~strikethrough~~.
+</div>
+
+<p><a href="./another-page.html">Linux</a>.</p>
+
+<p><a href="./another-page2.html">Git</a>.</p>
+
+<p><a href="./another-page3.html">Maven</a>.</p>
+
+<p><a href="./another-page6.html">Docker</a>.</p>
+
+<p><a href="./another-page8.html">Kubernetes</a>.</p>
+
+<p><a href="./another-page10.html">Distributed systems</a>.</p>
+
+<p><a href="./another-page11.html">Mysql</a>.</p>
+<h2 id="reading-notes">Reading notes</h2>
+<p><a href="./another-page4.html">“Java virtual machine specification”</a>.</p>
+
+<p><a href="./another-page5.html">“The Garbage Collection”</a>.</p>
+
+<p><a href="./another-page7.html">“Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide”</a>.</p>
+
+<p><a href="./another-page9.html">“Designing Data-Intensive Applications” </a>.</p>
+
+:ET
