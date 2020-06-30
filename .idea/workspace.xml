@@ -24,45 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65005f8f-8b8c-4f09-965f-1afbb5fecef5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/01/e7a7e254854f5eb6932053eaaa4474bf40e24f35a4eabfd04d7c170e717480" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/03/a1593d0dea3d03e063883a25e7375c6659af0db1384691330a37a7eee9625c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/07/e347c61ac1572a934bd688252bbc88aea20f14f8b3c3c90fc49de6470c75f0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/2c/4ad37eb58a361e0aaadb4c4856f1063a2638cf12766e7ba2970dfc9ab1bbd4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/4c/547ac962af56341ed5b9866f5a360da9e45ec4733b7c0416f058098d4d8235" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/52/e19da158bf014cc375ce0a1a7124b1f5cd08f306f81532592d7b60ca2e2b69" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/5b/36df8f53eb1e0e52b89e9e4b8cc89fdef0e7e964b5b6f66b9451379839ab71" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/5e/a4676bd877c86baaed63c6ec212e8b194125d7febc98ce35b78a6c55358637" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/71/2d288f980f190783fab43525a7456167fb8264ac8aa6f8a0d15fe5aa5ab74d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/78/a39609dab5b73c0309a84a1b2b9ea4629cc3d1cf6c2a43955ed886061dd4c7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/9e/b47d189cd00e624ecce88b303da03197808c86626e3d48e19e88030f8dd2d4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a6/9d117442e958257a24bc633a5e07ed219fa10b0bb59249439b777045684af4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b9/4112e4cf52f1071f306edd8af139e3df3682f44a1d62765f3e493dd70d9fa6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/ba/84bc7d028c4b54b1d58a3c6d8cc1c01e5127f2e91560e8f5812b0a6c7c5182" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/bf/725f391f49f10ed653a55d6c05a0b7b764f30dcd921f40da118bfe30e4b201" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/c0/98e6ed3eaf5c5f4d884bb2a3011b9a6b60b8536bc0191dd08878671ac607ff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/ca/5e0f23f82febc3049f83d7b4963209654b9df0f876960f37dfcb54b66fb9f9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/d1/c98bb56b004426449656a17e8d1f6b2e78d260176e517c5c4ae2ab834cc24b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/d8/ef2b2a1bf360b7792a587eb731c014d7c0f1622f4fba9ec8787208e4b5198c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e1/dda4acb8d409cf01ff7a2f86e79d1fda14834a58ec644c730ed3a08fc2d7e9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e2/017b9ef16ffd20b661ddd725c9cd15433b678f360e92b2424391dec1441c11" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e4/1456b0a2137460ba6fd1c70f88401ffa456d3ac1bdad6f8213b9cec1ed727e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e4/76b7cf13047afad72c4c54ab56ef63bfc77e48948383487f715baa006d7238" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/eb/105cc7911ea7ced38bd686c70167309d3dd85d9bceb0ef81545c0663bfa1ab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f3/8d417b74b0a07d79a9b911e94e1aa732537eb3fe46599cbf157c3033169322" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f7/0b4eb6183dbaa42a3bfb94915ffc1690b2ecf5013cb2f8649127f1f189aca4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/fb/ffef6ad9fd9a63b19a18333f3bb6b5afa0a8ef54951f7f7bd517a602159a66" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another-page10.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another-page11.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another-page9.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" beforeDir="false" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/70/50ed8b0474aa7b60d226487f352ca768373f705720497d294cdbf3f3432d21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another-page8.md" beforeDir="false" afterPath="$PROJECT_DIR$/another-page8.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
-    </list>
+    <list default="true" id="65005f8f-8b8c-4f09-965f-1afbb5fecef5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +69,7 @@
       <workItem from="1592809796811" duration="70000" />
       <workItem from="1592809910039" duration="37002000" />
       <workItem from="1593316046714" duration="1565000" />
-      <workItem from="1593318967434" duration="30784000" />
+      <workItem from="1593318967434" duration="30900000" />
     </task>
     <servers />
   </component>
