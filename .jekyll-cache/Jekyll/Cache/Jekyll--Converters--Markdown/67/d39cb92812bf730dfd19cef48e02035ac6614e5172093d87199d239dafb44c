@@ -1,4 +1,4 @@
-I"¥<h2 id="study-notes">Study notes</h2>
+I"e<h2 id="study-notes">Study notes</h2>
 
 <div style="display: none">
    Text can be **bold**, _italic_, or ~~strikethrough~~.
@@ -17,7 +17,5 @@
 <p><a href="./another-page6.html">Docker</a>.</p>
 
 <p><a href="./another-page7.html">Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide</a>.</p>
-
-<p><a href="./another-page8.html">Learning Kubernetes</a>.</p>
 
 :ET

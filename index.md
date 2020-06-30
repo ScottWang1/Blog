@@ -27,7 +27,6 @@ layout: default
 
 [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide](./another-page7.html).
 
-[Learning Kubernetes](./another-page8.html).
 
 
 
